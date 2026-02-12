@@ -2,8 +2,15 @@
 using System.Text.RegularExpressions;
 namespace StationMeteo.App
 {
-    internal class Program
+    /// <summary>
+    /// Programme Console pricipale
+    /// </summary>
+    public class Program
     {
+        /// <summary>
+        /// Méthode principale du projet console
+        /// </summary>
+        /// <param name="args">argument entré en parametres</param>
         static void Main(string[] args)
         {
             try

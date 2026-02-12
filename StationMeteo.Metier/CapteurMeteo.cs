@@ -9,11 +9,21 @@
         private double _temperature;
         private double _humidite;
 
+        /// <summary>
+        /// constructeur d'un capteur meteo avec uniquement le nom
+        /// </summary>
+        /// <param name="nom">nom du capteur</param>
         public CapteurMeteo(string nom)
         {
             Nom = nom;
         }
 
+        /// <summary>
+        /// constructeur d'un capteur avec nom, temperature, humidite
+        /// </summary>
+        /// <param name="nom">nom du capteur</param>
+        /// <param name="temprature">température</param>
+        /// <param name="humidite">pourcentage d'humidite</param>
         public CapteurMeteo(string nom, double temprature, double humidite)
         {
             Nom = nom;
@@ -21,6 +31,12 @@
             Humidite = humidite;
         }
 
+        /// <summary>
+        /// méthode qui vérifie si le texte contient des chiffres
+        /// </summary>
+        /// <param name="texte">string</param>
+        /// <returns>vrai si le texte contient des string et faux si il n'en contient pas</returns>
+        /// <exception cref="ArgumentException">Envoie une exception si le texte est null ou vide</exception>
         private bool ContientDesChiffres(string texte)
         {
             if (string.IsNullOrEmpty(texte))
