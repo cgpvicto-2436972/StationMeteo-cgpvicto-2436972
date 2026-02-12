@@ -6,15 +6,15 @@
     public class CapteurMeteo
     {
         private string _nom;
-        private int _temperature;
-        private int _humidite;
+        private double _temperature;
+        private double _humidite;
 
         public CapteurMeteo(string nom)
         {
             Nom = nom;
         }
 
-        public CapteurMeteo(string nom, int temprature, int humidite)
+        public CapteurMeteo(string nom, double temprature, double humidite)
         {
             Nom = nom;
             Temperature = temprature;
@@ -47,36 +47,36 @@
                     throw new ArgumentException("Le nom est null ou vide");
 
                 if (ContientDesChiffres(value) == true)
-                    throw new ArgumentException("Le nom est null ou vide");
+                    throw new ArgumentException("Le nom contient des chiffres");
 
                 _nom = value; 
             } 
         }
 
-        public int Temperature 
+        public double Temperature 
         { 
             get => _temperature;
             private set 
             { 
-                if (_temperature < -60)
+                if (value < -60)
                     _temperature = -60;
 
-                if (_temperature > 60) 
+                if (value > 60) 
                     _temperature = 60;
 
                 _temperature = value; 
             }
         }
 
-        public int Humidite 
+        public double Humidite 
         { 
             get => _humidite;
             private set 
             {
-                if (_humidite < 0)
+                if (value < 0)
                     throw new ArgumentOutOfRangeException("Le pourcentage d'humidité est en-dessous de zéro");
 
-                if (_humidite > 100)
+                if (value > 100)
                     throw new ArgumentOutOfRangeException("Le pourcentage d'humidité est au-dessus de cent");
 
                 _humidite = value; 
