@@ -17,7 +17,7 @@ namespace StationMeteo.App
 
             try
             {
-                CapteurMeteo capteur1 = new CapteurMeteo("Capteur123");
+                CapteurMeteo capteur2 = new CapteurMeteo("Capteur123");
             }
             catch (Exception ex)
             {
@@ -26,12 +26,14 @@ namespace StationMeteo.App
 
             try
             {
-                CapteurMeteo capteur1 = new CapteurMeteo("Capteur_Sud", 12.5, -10);
+                CapteurMeteo capteur3 = new CapteurMeteo("Capteur_Sud", 12.5, -10);
             }
             catch (Exception ex)
             {
                 throw;
             }
+
+            Console.WriteLine("Nom: Capteur_Nord  Température: " + 12.5 + " Humidité: " + 45.2);
         }
     }
 }
